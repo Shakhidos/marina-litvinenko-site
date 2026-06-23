@@ -222,6 +222,7 @@ body::before {
   right: -48px;
   border: 1px solid rgba(185, 148, 70, 0.4);
   border-radius: 50%;
+  z-index: 2;
   content: "";
 }
 
@@ -230,51 +231,24 @@ body::before {
   inset: 18px;
   border: 1px dashed rgba(233, 240, 224, 0.12);
   border-radius: calc(var(--radius-xl) - 16px);
+  z-index: 2;
   content: "";
 }
 
-.photo-illustration {
+.photo-image {
   position: absolute;
   inset: 0;
-  display: grid;
-  place-items: end center;
-  padding-bottom: 72px;
-}
-
-.photo-aura,
-.photo-head,
-.photo-body {
-  position: absolute;
+  z-index: 1;
   display: block;
-}
-
-.photo-aura {
-  width: 270px;
-  height: 270px;
-  bottom: 142px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(141, 194, 112, 0.22), transparent 68%);
-}
-
-.photo-head {
-  width: 112px;
-  height: 112px;
-  bottom: 232px;
-  border-radius: 50%;
-  background: linear-gradient(180deg, rgba(230, 239, 219, 0.95), rgba(200, 217, 192, 0.84));
-}
-
-.photo-body {
-  width: 240px;
-  height: 260px;
-  bottom: 24px;
-  border-radius: 140px 140px 34px 34px;
-  background: linear-gradient(180deg, rgba(228, 236, 220, 0.92), rgba(176, 196, 165, 0.84));
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
 }
 
 .photo-caption {
   position: relative;
-  z-index: 1;
+  z-index: 3;
   width: calc(100% - 40px);
   margin: 0 20px 20px;
   padding: 18px 20px;
@@ -294,15 +268,8 @@ body::before {
   margin-bottom: 6px;
 }
 
-.photo-caption span,
-.photo-note {
-  color: rgba(67, 90, 71, 0.84);
-}
-
-.photo-note {
-  margin: 0;
-  font-size: 0.95rem;
-  line-height: 1.6;
+.photo-caption span {
+  color: rgba(241, 246, 235, 0.78);
 }
 
 .intro-copy h1,
@@ -629,15 +596,6 @@ body::before {
 
   .photo-slot {
     min-height: 420px;
-  }
-
-  .photo-head {
-    bottom: 178px;
-  }
-
-  .photo-body {
-    width: 210px;
-    height: 220px;
   }
 
   .intro-actions,
